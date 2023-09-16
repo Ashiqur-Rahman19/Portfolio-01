@@ -645,7 +645,7 @@ footer .footer1 {
 footer .footer1 input{
     width: 300px;
     padding: 13px 20px;
-    display: block;
+    display: inline;
     border: none;
     outline: none;
     
