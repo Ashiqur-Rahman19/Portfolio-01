@@ -7,57 +7,63 @@ body{
     box-sizing: border-box;
 }
 /*Header start*/
-header{
-   width: 100%;
-   display: flex;
-   justify-content: space-between;
+
+.nav{
+    height: 70px;
+    max-width: 100%;
+    width: 100%;
+    padding: 0px 20px;
+    display: block;
+    background-color:#ffffff;
+    box-sizing: border-box;
+   
+   
+  }
   
-   background-color: #f1f2f6;
-   padding: 15px;
-   z-index: 1;
-}
-header h1{
-    margin-left: 10px;
-    font-weight: bold;
-    font-size: 40px;
-    margin-top: 2px;
-    color: rgb(1, 1, 77);
-    letter-spacing: 1.5px;
-    word-spacing: 3px;
-}
-header .logo{
-    display: flex;
-}
-header .navbar{
- 
-    padding-right: 80px;
-}
-
-header .navbar ul {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-header .navbar ul li{
-    padding: 5px 15px;
-    list-style: none;
-    font-weight:600;
-    font-size: 13px;
-    color: rgb(51, 51, 51);
-    cursor: pointer;
-    text-transform: uppercase;
-     font-family: 'Noto Sans', sans-serif;
+  .nav > .nav-header {display: inline;}
+  
+  .nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 35px;
+    line-height: 50px;
+    color: rgb(0, 2, 77);
+    font-weight: 600;
+    padding: 10px 10px 10px 10px;
+  }
+  
+  .nav > .nav-btn {
+    display: none;
+    padding: 0;
     
 }
 
-header .navbar ul li a{
-    text-decoration: none;
-   
-}
 
-header .navbar ul li:hover{
-    color: orangered
-}
+  .nav > .nav-links {
+      display: inline;
+      float: right;
+      font-size: 18px;
+      margin-top: 12px;
+      z-index: 1;
+      box-sizing: border-box;
+    }
+  
+  .nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: rgba(77, 77, 77, 0.849);
+    font-weight: 500;
+    box-sizing: border-box;
+  }
+  
+  .nav > .nav-links > a:hover {
+      background:linear-gradient(orangered, #ff4d29); 
+      transition: .3s;
+      color: white;
+  }
+  
+  .nav > #nav-check {display: none;}
+
 
 
 /*Header End*/
@@ -72,6 +78,7 @@ header .navbar ul li:hover{
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
+    
     
     
 }
@@ -347,10 +354,12 @@ header .navbar ul li:hover{
 /*Section5 start*/
 
 .section5{
-    width: 100%;   
+    width: 90%;  
+    margin: auto;
+    padding-bottom: 100px;
 }
 .featureProject1{
-    padding: 70px 10px;
+ padding: 50px 0;
     
 }
 .featureProject1 h1{
@@ -362,20 +371,31 @@ header .navbar ul li:hover{
 }
 
 .section5 .featureProject{
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin: 0px auto;
+    
 }
 
 .featureProject div{
     
     width: 340px;
     height: 339px;
-    padding: 15px 10px;
+    padding: 15px 19px;
     margin-top: 55px;
+    
 
 }
+
+.featureProject img{
+    width: 340px;
+    height: 339px;
+    margin: auto;
+    border-radius: 10px;
+   
+    
+}
+
 
 .section5.featureProject p{
     text-align: center;
@@ -411,6 +431,7 @@ header .navbar ul li:hover{
 .section6{
     width: 100%;
     height: 300px;
+    padding-top: 30px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -419,7 +440,7 @@ header .navbar ul li:hover{
     background-color:  #f1f2f6;
 }
 .section6Div1 h1{
-    width: 100%;
+    width: 90%;
     font-size: 35px;
     text-align: center;
     margin-top: 10px;
@@ -679,3 +700,84 @@ footer .footer1 button:hover{
 }
 
 /*Footer End*/
+
+@media all and (max-width:768px) {
+
+    .nav{
+        height: 100vh;
+        position: relative;
+    }
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      
+    }
+  
+    .nav > .nav-btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      margin-top: 20px;
+     
+    }
+  
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+      background-color: #ffffff;
+      
+    }
+  
+    .nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 3px solid #000000;
+    }
+  
+    .nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      text-align: center;
+      background-color:#ffc900;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+    
+      
+    }
+  
+    .nav > .nav-links > a {display: block; width: 100%;}
+    .nav > #nav-check:not(:checked) ~ .nav-links {height: 0px;}
+    .nav > #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 200px);
+      
+    }
+
+
+    .section5 figure{
+        margin: auto;
+      }
+
+    
+    
+      .featureProject2 p{
+        text-align: right;
+      }
+    
+      .featureProject2 h3{
+        text-align: right;
+        padding-right: 0 !important;
+        
+      }
+  
+
+
+header .navbar ul li:hover{
+    color: orangered;
+}
+     
+}
